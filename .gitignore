@@ -1,4 +1,8 @@
+__pycache__/
+.pytest_cache/
+htmlcov/
+old/
+
 .DS_Store
 .coverage
-old/
-__pycache__/
+todo
