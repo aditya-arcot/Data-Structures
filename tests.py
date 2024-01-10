@@ -1,6 +1,8 @@
 import random
 from linked_list import LinkedList
 from binary_search_tree import BST
+from stack import Stack
+from _queue import Queue
 
 n = 100
 
@@ -9,6 +11,74 @@ def random_int_list(_n):
     vals = [i for i in range(_n)]
     random.shuffle(vals)
     return vals
+
+
+class TestStack:
+    def test_size(self):
+        stack = Stack()
+        assert stack.is_empty()
+        assert stack.size() == 0
+
+        vals = random_int_list(n)
+        for i in vals:
+            stack.push(i)
+        assert not stack.is_empty()
+        assert stack.size() == n
+
+    def test_push_peek(self):
+        stack = Stack()
+        assert stack.peek() is None
+
+        vals = random_int_list(n)
+        for i in vals:
+            stack.push(i)
+            assert stack.peek() == i
+
+    def test_push_pop(self):
+        stack = Stack()
+        assert stack.pop() is None
+
+        vals = random_int_list(n)
+        for i in vals:
+            stack.push(i)
+
+        for i in range(n):
+            assert stack.pop() == vals[-1 - i]
+        assert stack.is_empty()
+
+
+class TestQueue:
+    def test_size(self):
+        queue = Queue()
+        assert queue.is_empty()
+        assert queue.size() == 0
+
+        vals = random_int_list(n)
+        for i in vals:
+            queue.enqueue(i)
+        assert not queue.is_empty()
+        assert queue.size() == n
+
+    def test_enqueue_peek(self):
+        queue = Queue()
+        assert queue.peek() is None
+
+        vals = random_int_list(n)
+        for i in vals:
+            queue.enqueue(i)
+            assert queue.peek() == vals[0]
+
+    def test_enqueue_dequeue(self):
+        queue = Queue()
+        assert queue.dequeue() is None
+
+        vals = random_int_list(n)
+        for i in vals:
+            queue.enqueue(i)
+
+        for i in range(n):
+            assert queue.dequeue() == vals[i]
+        assert queue.is_empty()
 
 
 class TestLinkedList:
