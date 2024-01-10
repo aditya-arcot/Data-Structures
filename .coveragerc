@@ -1,0 +1,3 @@
+[run]
+omit = 
+    /opt/homebrew/lib/python3.11/*
