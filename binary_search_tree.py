@@ -1,4 +1,4 @@
-class Node:
+class TreeNode:
     def __init__(self, key):
         self.key = key
         self.left = None
@@ -14,7 +14,7 @@ class BST:
 
     def insert(self, key):
         if self.is_empty():
-            self.root = Node(key)
+            self.root = TreeNode(key)
             return
 
         cur = self.root
@@ -24,12 +24,12 @@ class BST:
                 return
             elif key < cur.key:
                 if cur.left is None:
-                    cur.left = Node(key)
+                    cur.left = TreeNode(key)
                     return
                 cur = cur.left
             else:
                 if cur.right is None:
-                    cur.right = Node(key)
+                    cur.right = TreeNode(key)
                     return
                 cur = cur.right
 

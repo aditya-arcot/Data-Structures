@@ -1,4 +1,4 @@
-class Node:
+class LinkedListNode:
     def __init__(self, val):
         self.val = val
         self.next = None
@@ -20,12 +20,12 @@ class LinkedList:
         return count
 
     def insertAtStart(self, val):
-        node = Node(val)
+        node = LinkedListNode(val)
         node.next = self.root
         self.root = node
 
     def insertAtEnd(self, val):
-        node = Node(val)
+        node = LinkedListNode(val)
         if self.is_empty():
             self.root = node
             return
