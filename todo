@@ -1,8 +1,24 @@
 Data Structures
-- Trie
+- Generic Tree
 - Directed / Undirected Graph
 - Heap
 - Hash Table
 
-Improvements
-- Balancing BST
+Algorithms
+- BFS - queue
+- DFS - stack
+- Binary Search - O(log N)
+- Insertion Sort - O(N^2)
+ - compare 2, insert from unsorted into sorted
+- Selection Sort - O(N^2)
+ - select, swap smallest to expand sorted
+- Merge Sort
+ - split, merge
+- Quick Sort
+ - pivot, partitions
+
+Graphs
+- dfs
+- bfs
+- topological sort (DAG)
+- https://www.techinterviewhandbook.org/algorithms/graph/
